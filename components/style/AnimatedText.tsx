@@ -8,7 +8,7 @@ type AnimatedTextProps = {
   className?: string;
 };
 
-const AnimatedText = ({texts,interval=3000}:AnimatedTextProps) => {
+const AnimatedText = ({texts,interval=3000,className=""}:AnimatedTextProps) => {
     const [index,setIndex] = useState(0);
     const [fade,setFade] = useState(true);
 
@@ -27,7 +27,7 @@ const AnimatedText = ({texts,interval=3000}:AnimatedTextProps) => {
 
     return (
         <p
-         className={`transition-opacity duration-300 ${fade?'opacity-100':'opacity-0'}`}>
+         className={`transition-opacity duration-300 ${fade?'opacity-100':'opacity-0'} ${className}`}>
             {texts[index]}
         </p>
     )
